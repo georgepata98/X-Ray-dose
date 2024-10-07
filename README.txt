@@ -1,0 +1,2 @@
+In fisierul "sim.cc" se modifica numarul total de evenimente care se doreste a fi simulat.
+Cu programul "calculator_rezultat_final.cpp" se calculeaza doza medie finala dupa toate Run-urile si eroarea asociata.
