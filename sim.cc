@@ -77,9 +77,9 @@ int main(int argc, char** argv)
         {
             UImanager->ApplyCommand("/control/execute vis.mac");
             runManager->BeamOn(visEvents);
+
+            ui->SessionStart();  //activare gui
         }
-        
-        //ui->SessionStart();  //activare gui
         delete ui;
     }
     else
