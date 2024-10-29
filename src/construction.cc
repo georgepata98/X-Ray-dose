@@ -108,7 +108,8 @@ G4VPhysicalVolume* MyDetectorConstruction::DefineVolumes()
     solidUnion->AddNode(*solidDet2, trDet2);
     solidUnion->AddNode(*solidDet3, trDet3);
     solidUnion->Voxelize();
-    G4LogicalVolume *logicUnion = new G4LogicalVolume(solidUnion, SiMat, "logicUnion");
+    // G4LogicalVolume *logicUnion = new G4LogicalVolume(solidUnion, SiMat, "logicUnion");
+    G4LogicalVolume *logicUnion = new G4LogicalVolume(solidUnion, worldMat, "logicUnion");  //volum de detectie din aer
     G4RotationMatrix *rotUnion = new G4RotationMatrix();
     rotUnion->rotateY(-90*deg);
     G4VPhysicalVolume *physUnion = new G4PVPlacement(rotUnion, G4ThreeVector(100*cm, 0, 23.15*cm), logicUnion, "physUnion", logicWorld, false, 0, true);
