@@ -18,6 +18,7 @@
 
 #include "G4Box.hh"
 #include "G4Tubs.hh"
+#include "G4Orb.hh"
 
 #include "G4VPrimitiveScorer.hh"
 #include "G4MultiFunctionalDetector.hh"
