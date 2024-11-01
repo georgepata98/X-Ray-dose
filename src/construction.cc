@@ -90,7 +90,7 @@ G4VPhysicalVolume* MyDetectorConstruction::DefineVolumes()
 
     //Volumes - detector NOMEX
 
-    G4Tubs *solidDet1 = new G4Tubs("solidDet1", 0*cm, 2.5*cm, .45*cm, 0*deg, 180*deg);  //cell 6 NOMEX
+    /*G4Tubs *solidDet1 = new G4Tubs("solidDet1", 0*cm, 2.5*cm, .45*cm, 0*deg, 180*deg);  //cell 6 NOMEX
     G4Box *solidDet2 = new G4Box("solidDet2", 2.5*cm, .6*cm, .45*cm);  //cell 6 NOMEX
     G4Tubs *solidDet3 = new G4Tubs("solidDet3", 0*cm, 2.5*cm, .45*cm, 0*deg, 180*deg);  //cell 6 NOMEX
 
@@ -112,7 +112,13 @@ G4VPhysicalVolume* MyDetectorConstruction::DefineVolumes()
     G4LogicalVolume *logicUnion = new G4LogicalVolume(solidUnion, worldMat, "logicUnion");  //volum de detectie din aer
     G4RotationMatrix *rotUnion = new G4RotationMatrix();
     rotUnion->rotateY(-90*deg);
-    G4VPhysicalVolume *physUnion = new G4PVPlacement(rotUnion, G4ThreeVector(100*cm, 0, 23.15*cm), logicUnion, "physUnion", logicWorld, false, 0, true);
+    G4VPhysicalVolume *physUnion = new G4PVPlacement(rotUnion, G4ThreeVector(100*cm, 0, 23.15*cm), logicUnion, "physUnion", logicWorld, false, 0, true);*/
+
+    
+
+    G4Orb *solidUnion = new G4Orb("solidUnion", 10*cm);  //detectorul sferic folosit in MCNP la tally f5:p 100 0 23.15 10 (x,y,z,r)
+    G4LogicalVolume *logicUnion = new G4LogicalVolume(solidUnion, worldMat, "logicUnion");  //volum de detectie cu aer
+    G4VPhysicalVolume *physUnion = new G4PVPlacement(0, G4ThreeVector(100*cm, 0, 23.15*cm), logicUnion, "physUnion", logicWorld, false, 0, true);
 
 //==================================================================================
 
